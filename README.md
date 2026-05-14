@@ -120,3 +120,6 @@ python3 ~/.hermes/scripts/fetch_pronote_files.py
 ---
 
 🎓 *« Il faut cultiver notre jardin. »* – Voltaire, *Candide*
+
+
+**Déployé** sur GitHub Pages – Thu May 14 12:38
