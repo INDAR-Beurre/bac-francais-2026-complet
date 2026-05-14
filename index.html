@@ -3,370 +3,991 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bac de Français 2026 – 20 Textes & Méthodologie</title>
+    <title>📚 Bac de Français - Alexandre Galke | Méthodologie & 15 Textes</title>
+    <meta name="description" content="Ressources complètes pour le bac oral de français : méthodologie détaillée, analyses des 15 textes, citations, entretien.">
     <style>
-        :root { --bg: #0d1117; --card: #161b22; --text: #e6edf3; --accent: #2563eb; --accent-2: #7c3aed; --border: #30363d; }
-        body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 0; line-height: 1.6; }
-        .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
-        header { text-align: center; padding: 40px 0; border-bottom: 1px solid var(--border); margin-bottom: 30px; }
-        h1 { font-size: 2.2em; margin: 0; background: linear-gradient(90deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .subtitle { color: #8b949e; font-size: 1.1em; margin-top: 10px; }
-        nav { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-bottom: 30px; }
-        nav button { background: var(--card); border: 1px solid var(--border); color: var(--text); padding: 10px 20px; border-radius: 6px; cursor: pointer; transition: all 0.2s; }
-        nav button:hover, nav button.active { border-color: var(--accent); background: rgba(37, 99, 235, 0.1); }
-        section { display: none; }
-        section.active { display: block; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px; }
-        .card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; transition: transform 0.2s, border-color 0.2s; }
-        .card:hover { transform: translateY(-2px); border-color: var(--accent); }
-        .card h3 { margin: 0 0 10px 0; font-size: 1.1em; color: var(--accent); }
-        .card .auteur { color: #8b949e; font-size: 0.9em; margin-bottom: 10px; }
-        .card .mouvement { font-size: 0.8em; color: #7c3aed; text-transform: uppercase; letter-spacing: 0.5px; }
-        .small { font-size: 0.85em; color: #8b949e; }
-        .pdf-list { list-style: none; padding: 0; }
-        .pdf-list li { background: var(--card); border: 1px solid var(--border); margin: 8px 0; padding: 15px; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; }
-        .pdf-list a { color: var(--accent); text-decoration: none; font-weight: 500; }
-        footer { text-align: center; padding: 40px 0; color: #8b949e; border-top: 1px solid var(--border); margin-top: 40px; }
-        pre { background: var(--card); border: 1px solid var(--border); padding: 20px; border-radius: 6px; overflow-x: auto; }
-        code { font-family: 'SFMono-Regular', Consolas, monospace; }
+        :root {
+            --primary: #2563eb;
+            --secondary: #7c3aed;
+            --bg: #0f172a;
+            --bg-card: #1e293b;
+            --text: #e2e8f0;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --accent: #06b6d4;
+            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        header {
+            background: var(--gradient);
+            padding: 2.5rem 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('data:image/svg+xml,<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="60" fill="rgba(255,255,255,0.05)"/><text x="30" y="30" font-size="24" text-anchor="middle" fill="rgba(255,255,255,0.1)">📖</text></svg>');
+        }
+        h1 { color: white; font-size: 2.2rem; margin-bottom: 0.5rem; text-shadow: 2px 2px 8px rgba(0,0,0,0.3); }
+        .subtitle { color: rgba(255,255,255,0.9); font-size: 1.1rem; }
+        nav {
+            background: rgba(30, 41, 59, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 0.75rem 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav ul { display: flex; justify-content: center; gap: 2rem; list-style: none; flex-wrap: wrap; }
+        nav a { color: var(--text); text-decoration: none; padding: 0.5rem 1rem; border-radius: 6px; transition: all 0.2s; }
+        nav a:hover, nav a.active { background: rgba(37, 99, 235, 0.2); color: var(--accent); }
+        main { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem; }
+        section { margin-bottom: 4rem; scroll-margin-top: 120px; }
+        .section-title { color: var(--accent); border-bottom: 3px solid var(--accent); padding-bottom: 0.5rem; margin-bottom: 2rem; }
+        .methodologie h2 { margin-top: 2rem; color: var(--secondary); }
+        .methodologie h3 { margin-top: 1.5rem; color: var(--primary); }
+        .methodologie ul, .methodologie ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+        .methodologie li { margin: 0.5rem 0; }
+        .methodologie blockquote {
+            border-left: 4px solid var(--accent);
+            padding-left: 1rem;
+            margin: 1rem 0;
+            font-style: italic;
+            color: var(--text-muted);
+            background: rgba(6, 182, 212, 0.05);
+            padding: 0.75rem 1rem;
+            border-radius: 0 6px 6px 0;
+        }
+        .methodologie code {
+            background: rgba(0,0,0,0.3);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: monospace;
+            color: var(--accent);
+        }
+        .methodologie strong { color: var(--accent); }
+        .texte-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .texte-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            border-color: var(--accent);
+        }
+        .texte-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .texte-number {
+            background: var(--gradient);
+            color: white;
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        .texte-header h2 { margin: 0; font-size: 1.5rem; color: var(--text); }
+        .texte-header h2 small { color: var(--text-muted); font-weight: normal; }
+        .texte-meta { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+        .tag {
+            background: rgba(6, 182, 212, 0.15);
+            color: var(--accent);
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(6,182,212,0.3);
+        }
+        .texte-content h3 { color: var(--secondary); margin-top: 1.5rem; margin-bottom: 0.5rem; }
+        .texte-content ul { margin-left: 1.5rem; }
+        .texte-content li { margin: 0.3rem 0; }
+        .citation {
+            background: rgba(0,0,0,0.25);
+            border-left: 4px solid var(--accent);
+            padding: 0.75rem 1rem;
+            margin: 0.75rem 0;
+            font-style: italic;
+            color: var(--text-muted);
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            margin-top: 4rem;
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8rem; }
+            nav ul { gap: 1rem; }
+            .texte-header { flex-direction: column; align-items: flex-start; }
+        }
+        html { scroll-behavior: smooth; }
     </style>
 </head>
 <body>
-<div class="container">
-<header>
-    <h1>🎓 Bac de Français 2026</h1>
-    <p class="subtitle">1ère 1 – GALKE Alexandre<br>20 textes au programme • Méthodologie complète • Ressources Pronote</p>
-</header>
+    <header>
+        <h1>📚 Bac de Français – Alexandre GALKE</h1>
+        <p class="subtitle">Méthodologie complète + Analyses des 15 textes – 1ère (2025-2026)</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#methodologie">📋 Méthodologie</a></li>
+            <li><a href="#textes">📖 15 Textes</a></li>
+            <li><a href="#ressources">📁 Ressources</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- METHODOLOGIE SECTION -->
+        <section id="methodologie">
+            <h2 class="section-title">📋 Méthodologie Complète de l'Oral du Bac</h2>
+            <div class="methodologie">
+                <h1>Méthodologie Complète - Oral du Bac de Français (Première)</h1>
+
+<h2>Vue d'ensemble de l'épreuve</h2>
+
+<p>L'épreuve orale de français au baccalauréat dure **40 minutes** et comporte **deux parties** :</p>
+
+<h3>Partie 1 : Explication de texte (20 minutes)</h3>
+<ul>
+<li>**Préparation** : 20 minutes (avec dossier et dictionnaire)</li>
+<li>**Exposé** : 10-12 minutes</li>
+<li>**Entretien** : 8-10 minutes</li>
+</ul>
+
+<h3>Partie 2 : Présentation d'un objet d'étude (20 minutes)</h3>
+<ul>
+<li>**Préparation** : 20 minutes</li>
+<li>**Exposé** : 10-12 minutes</li>
+<li>**Entretien** : 8-10 minutes</li>
+</ul>
+
+<p>---</p>
+
+<h2>PARTIE 1 : Explication de texte</h2>
+
+<h3>Objectifs</h3>
+<ul>
+<li>Dégager le **sens** du texte</li>
+<li>Analyser les **procédés littéraires** et leur fonction</li>
+<li>Montrer la **cohérence interne** du texte</li>
+<li>Situer le texte dans son **contexte**</li>
+</ul>
+
+<h3>Structure de l'explication (4-5 parties)</h3>
+
+<p>#### 1. **Introduction** (2-3 minutes)</p>
+<p>**Formule obligatoire** : « Je vais vous présenter une explication de texte de [auteur], extrait de [œuvre], [date/collection]. Ce texte appartient à la [genre/type]. »</p>
+
+<p>**Contenu** :</p>
+<ul>
+<li>Présentation de l'auteur et de l'œuvre (1 phrase)</li>
+<li>Situation du texte dans l'œuvre (moment, place)</li>
+<li>Problématique : question centrale que le texte pose</li>
+<li>Annonce du plan (2 axes maximum)</li>
+</ul>
+
+<p>**Exemple** :</p>
+<p>> « Je vais vous présenter une explication de texte de Colette, extrait des *Vrilles de la vigne*, paru en 1908. Ce texte est un extrait de roman autobiographique. Nous verrons dans un premier temps comment Colette dépeint la complexité de l'identité féminine, puis en second lieu, comment elle utilise le paysage comme reflet des émotions. »</p>
+
+<p>#### 2. **Première partie - Le mouvement du texte** (3-4 minutes)</p>
+
+<p>**A. Mouvement d'ensemble**</p>
+<ul>
+<li>Découper le texte en 2-3 séquences</li>
+<li>Résumer chaque séquence en une phrase</li>
+<li>Montrer l'évolution (progression)</li>
+</ul>
+
+<p>**B. Étude des procédés par séquence**</p>
+<p>Pour chaque séquence :</p>
+<ul>
+<li>**Champs lexicaux** (dominants, contrastes)</li>
+<li>**Figure de style** (métaphore, comparaison, personnification…)</li>
+<li>** Registres** (lyrique, élégiaque, satirique…)</li>
+<li>**Marqueurs temporels/spatiaux** (chronologie, espace)</li>
+<li>**Point de vue** (narrateur, focalisation)</li>
+<li>**Construction des phrases** (longueur, ponctuation)</li>
+</ul>
+
+<p>**Astuce** : Reliez toujours les procédés au sens.</p>
+
+<p>#### 3. **Deuxième partie - Approfondissement** (3-4 minutes)</p>
+
+<p>Choisissez **un axe d'approfondissement** selon le texte :</p>
+
+<p>**Option A : Thèmes majeurs**</p>
+<ul>
+<li>Amour, mort, nature, société, liberté, identité, mémoire…</li>
+</ul>
+
+<p>**Option B : Style de l'auteur**</p>
+<ul>
+<li>Écriture fragmentée / continue</li>
+<li>Usage de l'oral / de l'écrit</li>
+<li>Ironie, auto-dérision, lyrisme</li>
+</ul>
 
-<nav id="main-nav">
-    <button data-target="methodologie" class="active">📋 Méthodologie</button>
-    <button data-target="textes">📖 20 Textes</button>
-    <button data-target="ressources">📁 Ressources</button>
-</nav>
-
-<section id="methodologie" class="active">
-    <h2>📋 Méthodologie de l'oral</h2>
-    # Méthodologie Complète - Oral du Bac de Français (Première)
-
-## Vue d'ensemble de l'épreuve
-
-L'épreuve orale de français au baccalauréat dure **40 minutes** et comporte **deux parties** :
-
-### Partie 1 : Explication de texte (20 minutes)
-- **Préparation** : 20 minutes (avec dossier et dictionnaire)
-- **Exposé** : 10-12 minutes
-- **Entretien** : 8-10 minutes
-
-### Partie 2 : Présentation d'un objet d'étude (20 minutes)
-- **Préparation** : 20 minutes
-- **Exposé** : 10-12 minutes
-- **Entretien** : 8-10 minutes
-
----
-
-## PARTIE 1 : Explication de texte
-
-### Objectifs
-- Dégager le **sens** du texte
-- Analyser les **procédés littéraires** et leur fonction
-- Montrer la **cohérence interne** du texte
-- Situer le texte dans son **contexte**
-
-### Structure de l'explication (4-5 parties)
-
-#### 1. **Introduction** (2-3 minutes)
-**Formule obligatoire** : « Je vais vous présenter une explication de texte de [auteur], extrait de [œuvre], [date/collection]. Ce texte appartient à la [genre/type]. »
-
-**Contenu** :
-- Présentation de l'auteur et de l'œuvre (1 phrase)
-- Situation du texte dans l'œuvre (moment, place)
-- Problématique : question centrale que le texte pose
-- Annonce du plan (2 axes maximum)
-
-**Exemple** :
-> « Je vais vous présenter une explication de texte de Colette, extrait des *Vrilles de la vigne*, paru en 1908. Ce texte est un extrait de roman autobiographique. Nous verrons dans un premier temps comment Colette dépeint la complexité de l'identité féminine, puis en second lieu, comment elle utilise le paysage comme reflet des émotions. »
-
-#### 2. **Première partie - Le mouvement du texte** (3-4 minutes)
-
-**A. Mouvement d'ensemble**
-- Découper le texte en 2-3 séquences
-- Résumer chaque séquence en une phrase
-- Montrer l'évolution (progression)
-
-**B. Étude des procédés par séquence**
-Pour chaque séquence :
-- **Champs lexicaux** (dominants, contrastes)
-- **Figure de style** (métaphore, comparaison, personnification…)
-- ** Registres** (lyrique, élégiaque, satirique…)
-- **Marqueurs temporels/spatiaux** (chronologie, espace)
-- **Point de vue** (narrateur, focalisation)
-- **Construction des phrases** (longueur, ponctuation)
-
-**Astuce** : Reliez toujours les procédés au sens.
-
-#### 3. **Deuxième partie - Approfondissement** (3-4 minutes)
-
-Choisissez **un axe d'approfondissement** selon le texte :
-
-**Option A : Thèmes majeurs**
-- Amour, mort, nature, société, liberté, identité, mémoire…
-
-**Option B : Style de l'auteur**
-- Écriture fragmentée / continue
-- Usage de l'oral / de l'écrit
-- Ironie, auto-dérision, lyrisme
-
-**Option C : Contexte historique/littéraire**
-- Mouvement littéraire (Classicisme, Romantisme, Naturalisme, Surréalisme…)
-- Événements historiques
-- Place dans l'œuvre de l'auteur
-
-#### 4. **Conclusion** (1-2 minutes)
-
-**Formule** : « Pour conclure… »
-
-**Contenu** :
-- Bilan : rappel des deux axes principaux
-- **Ouverture** : lien avec une autre œuvre, une problématique plus large, une actualité
-
-**Exemple** :
-> « Pour conclure, ce texte de Colette montre à la fois la puissance évocatrice du souvenir d'enfance et la manière dont l'écriture permet de transcender le temps. On pourrait prolonger cette réflexion en comparant avec les *Mémoires d'une jeune fille rangée* de Simone de Beauvoir, où le même travail de mémoire s'opère. »
-
----
-
-## PARTIE 2 : Présentation d'un objet d'étude
-
-### Objectifs
-- Montrer votre **culture littéraire**
-- Proposer une **problématique personnelle**
-- Argumenter en mobilisant des **œuvres au programme**
-
-### Préparation (20 minutes)
-
-**Matériel autorisé** :
-- Dossier rassemblé par l'élève
-- Dictionnaire
-- Notes personnelles
-
-**Contenu du dossier** (à préparer AVANT) :
-- Fiches synthétiques sur chaque œuvre
-- Citations marquantes
-- Bibliographie personnelle
-
-### Structure de l'exposé (environ 10 minutes)
-
-#### 1. **Introduction** (2 minutes)
-
-**Formule** : « J'ai choisi de vous présenter [objet d'étude] à travers l'étude de [œuvres]. »
-
-**Contenu** :
-- Définition de l'objet d'étude (ex: « la critique sociale dans le roman du XIXe siècle »)
-- Présentation des œuvres choisies (auteur, titre, date)
-- Problématique : question que vous posez
-- Annonce du plan
-
-**Exemple** :
-> « J'ai choisi de vous présenter l'objet d'étude *Le roman et le personnage du XVIIe siècle à nos jours* à travers trois œuvres : *La Princesse de Clèves* de Madame de Lafayette (1678), *Le Rouge et le Noir* de Stendhal (1830), et *L'Écume des jours* de Boris Vian (1947). Ma problématique est la suivante : en quoi le personnage romanesque permet-il de critiquer la société de son époque ? »
-
-#### 2. **Développement** (6-7 minutes)
-
-**Deux parties maximum** (2 axes), chacune avec :
-
-**A. Analyse d'une œuvre** (3-4 minutes par œuvre)
-- Résumé bref (30 secondes)
-- Analyse d'un passage clé (procédés, enjeux)
-- Lien avec la problématique
-
-**B. Mise en perspective** (dialogue entre œuvres)
-- Points communs / contrastes
-- Évolution dans le temps
-- Différences de traitement du thème
-
-**Astuce** : Parlez des œuvres au programme ET une œuvre de la culture personnelle.
-
-#### 3. **Conclusion** (1 minute)
-- Bilan des réponses à la problématique
-- Ouverture (lien avec un autre objet d'étude, une réflexion personnelle)
-
----
-
-## PARTIE 3 : L'entretien (questions du jury)
-
-### Types de questions possibles
-
-**Sur votre exposé** :
-- « Pourquoi avoir choisi cette problématique ? »
-- « Auriez-vous pu prendre un autre exemple ? »
-- « Quelle est l'œuvre qui vous a le plus marqué ? »
-
-**Sur les œuvres au programme** :
-- Questions sur l'auteur, le contexte
-- Comparaisons entre œuvres
-- Lectures complémentaires
-
-**Questions plus générales** :
-- Définition d'un mouvement littéraire
-- Évolution d'un thème à travers les siècles
-- Votre opinion personnelle (argumentée)
-
-### Conseils pour l'entretien
-- **Ne pas rester muet** : même si vous ne savez pas, proposez une hypothèse
-- **Relancez** le dialogue : « Cela me fait penser à… »
-- **Montrez votre curiosité** : mentionnez des lectures personnelles
-- **Restez poli** et courtois, même face à des questions difficiles
-
----
-
-## CONSEILS GÉNÉRAUX
-
-### Avant l'épreuve
-- **S'entraîner à l'oral** (timer 10 minutes)
-- Préparer des fiches synthétiques
-- Relire les œuvres au programme en entier
-- Apprendre des citations clés (auteur, œuvre, page si possible)
-
-### Pendant l'épreuve
-- **Parlez distinctement** et à volume normal
-- **Regardez le jury** (pas vos notes en permanence)
-- **Gérez votre temps** : 10 minutes = max 1200 mots à l'oral
-- **Soyez naturel** : évitez l'apprentissage par cœur
-
-### Sur la forme
-- « Bonjour, Madame, Monsieur » / « Au revoir »
-- Pas de tics de langage (« euh… »)
-- Posture droite, mains visibles
-- Langage soutenu mais pas guindé
-
-### Sur le fond
-- **Ne faites pas de résumé** : l'analyse prime
-- **Citez des passages** (même approximativement)
-- ** argumentez** : « cela montre que… », « on peut interpréter »
-- **Ne contester pas le jury** : défendez vos idées avec respect
-
----
-
-## PIÈGES À ÉVITER
-
-❌ **Résumer l'œuvre entière** → Analysez UN passage seulement
-❌ **Énumérer les figures de style** sans les expliquer
-❌ **Parler de vos souvenirs de lecture** sans rapport avec le texte
-❌ **Se plaindre de la difficulté** du texte
-❌ **Interrompre le jury** pendant ses questions
-❌ **Lire ses notes pendant toute l'épreuve**
-
----
-
-## CHECKLIST DE RÉVISION
-
-- [ ] Connaître les 15 textes obligatoires (auteur, œuvre, siècle, genre)
-- [ ] Savoir faire une introduction en 2 minutes chrono
-- [ ] Maîtriser le vocabulaire littéraire (champ lexical, registre, figure de style)
-- [ ] Avoir 3 citations par œuvre au moins
-- [ ] Être capable de situer chaque œuvre dans son mouvement littéraire
-- [ ] Savoir comparer deux œuvres sur un thème
-- [ ] Avoir préparé un dossier avec fiches synthétiques
-- [ ] S'être entraîné à l'oral chronométré
-- [ ] Avoir relu les consignes officielles de l'épreuve
-
----
-
-## RESSOURCES COMPLÉMENTAIRES
-
-### Sites utiles
-- **Eduscol** : programmes et ressources officielles
-- **Weblettres** : analyses détaillées
-- **Bac Français** : annales et sujets
-- **Kartable** : résumés et quiz
-
-### Dictionnaires
-- *Le Petit Robert* (définitions, étymologie)
-- *Dictionnaire des œuvres* (Lafont, Robert)
-
-### Revues
-- *L'école des parents* (articles sur la littérature)
-- *Le Monde diplomatique* (approches critiques)
-
----
-
-## EXEMPLE D'INTRODUCTION TYPE
-
-> « Bonjour, je vais vous présenter une explication de texte de **Victor Hugo**, extrait des **Misérables**, **1862**. Ce passage se situe dans la partie où Jean Valjean découvre la misère des enfants des rues. Il s'agit d'un **texte descriptif et pathétique**. Ma problématique est la suivante : **en quoi ce portrait d'enfant misérable fonctionne-t-il comme un appel à la compassion et à l'action sociale ?** Pour répondre, je analyserai d'abord **la construction d'un pathétique réaliste**, puis **l'engagement humaniste de Hugo** qui transparaît dans ce texte. »
-
----
-
-**Bonne révision !** 🎓📚
-
-</section>
-
-<section id="textes">
-    <div class="grid" id="textes-grid"></div>
-</section>
-
-<section id="ressources">
-    <h2>📁 Ressources Pronote</h2>
-    <p class="small">Documents officiels téléchargés depuis votre espace Pronote.</p>
-    
-    <h3 style="margin-top: 2em;">🐙 Code source</h3>
-    <p style="font-size: 1.1em; margin: 1em 0 2em;">
-      <a href="https://github.com/INDAR-Beurre/bac-francais-2026-complet" target="_blank" rel="noopener"
-         style="display: inline-flex; align-items: center; gap: 0.5em; padding: 0.75em 1.25em;
-                background: #24292e; color: white; border-radius: 6px;
-                text-decoration: none; font-weight: 600;">
-        <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor">
-          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.22 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0016 8c0-4.42-3.58-8-8-8z"/>
-        </svg>
-        Voir le dépôt GitHub
-      </a>
-    </p>
-
-<ul class="pdf-list">
-    <li><a href="file:///Users/beurre/Bureau/BAC_Francais_Complet/Ressources/Dates_Bac_2026.pdf">Dates_Bac_2026.pdf</a> <span class="small">160 Ko</span></li>
-<li><a href="file:///Users/beurre/Bureau/BAC_Francais_Complet/Ressources/Entraînement_à_la_deuxième_partie_de_l'épreuve_orale___Consigne.pdf">Entraînement_à_la_deuxième_partie_de_l'épreuve_orale___Consigne.pdf</a> <span class="small">42 Ko</span></li>
-<li><a href="file:///Users/beurre/Bureau/BAC_Francais_Complet/Ressources/Oraux_blancs_planning_V2.pdf">Oraux_blancs_planning_V2.pdf</a> <span class="small">563 Ko</span></li>
-<li><a href="file:///Users/beurre/Bureau/BAC_Francais_Complet/Ressources/Eléments_de_corrigé_--commentaire.pdf">Eléments_de_corrigé_--commentaire.pdf</a> <span class="small">154 Ko</span></li>
-<li><a href="file:///Users/beurre/Bureau/BAC_Francais_Complet/Ressources/Oraux_blancs_planning.pdf">Oraux_blancs_planning.pdf</a> <span class="small">563 Ko</span></li>
-    </ul>
-</section>
-
-<footer>
-    <p>Projet généré automatiquement – Bon courage pour le bac ! 🚀</p>
-</footer>
-</div>
-
-<script>
-const sections = document.querySelectorAll('section');
-const buttons = document.querySelectorAll('nav button');
-function showSection(id) {
-    sections.forEach(s => s.classList.remove('active'));
-    document.getElementById(id).classList.add('active');
-    buttons.forEach(b => b.classList.toggle('active', b.dataset.target === id));
-}
-buttons.forEach(btn => {
-    btn.addEventListener('click', () => showSection(btn.dataset.target));
-});
-
-const textesData = [{"id": 1, "auteur": "Arthur Rimbaud", "titre": "Vénus Anadyomène", "annee": "1870", "mouvement": "Symbolisme", "dossier": "Texte_01_Arthur_Rimbaud_Vénus_Anadyomène"}, {"id": 2, "auteur": "Arthur Rimbaud", "titre": "Le Mal", "annee": "1870", "mouvement": "Symbolisme", "dossier": "Texte_02_Arthur_Rimbaud_Le_Mal"}, {"id": 3, "auteur": "Arthur Rimbaud", "titre": "Le Dormeur du val", "annee": "1870", "mouvement": "Symbolisme", "dossier": "Texte_03_Arthur_Rimbaud_Le_Dormeur_du_val"}, {"id": 4, "auteur": "Charles Baudelaire", "titre": "La Beauté", "annee": "1857", "mouvement": "Symbolisme", "dossier": "Texte_04_Charles_Baudelaire_La_Beauté"}, {"id": 5, "auteur": "Tristan Corbière", "titre": "Le Crapaud", "annee": "1873", "mouvement": "Symbolisme maudit", "dossier": "Texte_05_Tristan_Corbière_Le_Crapaud"}, {"id": 6, "auteur": "Colette", "titre": "Sido – Le portrait de la mère", "annee": "1929", "mouvement": "Naturalisme tardif", "dossier": "Texte_06_Colette_Sido"}, {"id": 7, "auteur": "Colette", "titre": "Sido – « Car j'aimais tant l'aube »", "annee": "1929", "mouvement": "Naturalisme tardif", "dossier": "Texte_07_Colette_Sido"}, {"id": 8, "auteur": "Colette", "titre": "Les Vrilles de la vigne – « Jour gris »", "annee": "1908", "mouvement": "Naturalisme tardif", "dossier": "Texte_08_Colette_Les_Vrilles_de_la_vigne"}, {"id": 9, "auteur": "Jean-Jacques Rousseau", "titre": "La Nouvelle Héloïse – Le jardin de Julie", "annee": "1761", "mouvement": "Préromantisme", "dossier": "Texte_09_Jean_Jacques_Rousseau_La_Nouvelle_Héloïse"}, {"id": 10, "auteur": "Émile Zola", "titre": "La Faute de l'abbé Mouret – Le Paradou", "annee": "1875", "mouvement": "Naturalisme", "dossier": "Texte_10_Émile_Zola_La_Faute_de_labbé_Mouret"}, {"id": 11, "auteur": "Madame de Graffigny", "titre": "Lettres d'une Péruvienne – Lettre 1", "annee": "1747", "mouvement": "Lumières", "dossier": "Texte_11_Madame_de_Graffigny_Lettres_dune_Péruvienne"}, {"id": 12, "auteur": "Madame de Graffigny", "titre": "Lettres d'une Péruvienne – Lettre 14", "annee": "1747", "mouvement": "Lumières", "dossier": "Texte_12_Madame_de_Graffigny_Lettres_dune_Péruvienne"}, {"id": 13, "auteur": "Madame de Graffigny", "titre": "Lettres d'une Péruvienne – Lettre 41", "annee": "1747", "mouvement": "Lumières", "dossier": "Texte_13_Madame_de_Graffigny_Lettres_dune_Péruvienne"}, {"id": 14, "auteur": "Montesquieu", "titre": "Lettres persanes – Lettre 30", "annee": "1721", "mouvement": "Lumières", "dossier": "Texte_14_Montesquieu_Lettres_persanes"}, {"id": 15, "auteur": "Emilie du Châtelet", "titre": "Discours sur le bonheur", "annee": "1779", "mouvement": "Lumières", "dossier": "Texte_15_Emilie_du_Châtelet_Discours_sur_le_bonheur"}, {"id": 16, "auteur": "Pierre Corneille", "titre": "Le Menteur – Acte I, scène 1", "annee": "1644", "mouvement": "Baroque/Classique", "dossier": "Texte_16_Pierre_Corneille_Le_Menteur"}, {"id": 17, "auteur": "Pierre Corneille", "titre": "Le Menteur – Acte I, scène 3", "annee": "1644", "mouvement": "Baroque/Classique", "dossier": "Texte_17_Pierre_Corneille_Le_Menteur"}, {"id": 18, "auteur": "Pierre Corneille", "titre": "Le Menteur – Acte III, scène 5", "annee": "1644", "mouvement": "Baroque/Classique", "dossier": "Texte_18_Pierre_Corneille_Le_Menteur"}, {"id": 19, "auteur": "Marivaux", "titre": "Les Fausses Confidences – Acte I, sc. 14", "annee": "1737", "mouvement": "Lumières/Comédie psych.", "dossier": "Texte_19_Marivaux_Les_Fausses_Confidences"}, {"id": 20, "auteur": "Edmond Rostand", "titre": "Cyrano de Bergerac – III, 7", "annee": "1897", "mouvement": "Romantisme tardif", "dossier": "Texte_20_Edmond_Rostand_Cyrano_de_Bergerac"}];
-const grid = document.getElementById('textes-grid');
-textesData.forEach(t => {
-    const card = document.createElement('div');
-    card.className = 'card';
-    card.innerHTML = `
-        <h3>${t.titre}</h3>
-        <p class="auteur">${t.auteur} (${t.annee})</p>
-        <p class="mouvement">${t.mouvement}</p>
-        <button onclick="showAnalyse(${t.id})">Analyser</button>
-    `;
-    grid.appendChild(card);
-});
-
-window.showAnalyse = function(id) {
-    const t = textesData.find(x => x.id === id);
-    const path = `/Users/beurre/Bureau/BAC_Francais_Complet/Textes/${t.dossier}/analyse.md`;
-    // Ouverture simple via file://
-    const a = document.createElement('a');
-    a.href = 'file://' + path;
-    a.click();
-};
-</script>
+<p>**Option C : Contexte historique/littéraire**</p>
+<ul>
+<li>Mouvement littéraire (Classicisme, Romantisme, Naturalisme, Surréalisme…)</li>
+<li>Événements historiques</li>
+<li>Place dans l'œuvre de l'auteur</li>
+</ul>
+
+<p>#### 4. **Conclusion** (1-2 minutes)</p>
+
+<p>**Formule** : « Pour conclure… »</p>
+
+<p>**Contenu** :</p>
+<ul>
+<li>Bilan : rappel des deux axes principaux</li>
+<li>**Ouverture** : lien avec une autre œuvre, une problématique plus large, une actualité</li>
+</ul>
+
+<p>**Exemple** :</p>
+<p>> « Pour conclure, ce texte de Colette montre à la fois la puissance évocatrice du souvenir d'enfance et la manière dont l'écriture permet de transcender le temps. On pourrait prolonger cette réflexion en comparant avec les *Mémoires d'une jeune fille rangée* de Simone de Beauvoir, où le même travail de mémoire s'opère. »</p>
+
+<p>---</p>
+
+<h2>PARTIE 2 : Présentation d'un objet d'étude</h2>
+
+<h3>Objectifs</h3>
+<ul>
+<li>Montrer votre **culture littéraire**</li>
+<li>Proposer une **problématique personnelle**</li>
+<li>Argumenter en mobilisant des **œuvres au programme**</li>
+</ul>
+
+<h3>Préparation (20 minutes)</h3>
+
+<p>**Matériel autorisé** :</p>
+<ul>
+<li>Dossier rassemblé par l'élève</li>
+<li>Dictionnaire</li>
+<li>Notes personnelles</li>
+</ul>
+
+<p>**Contenu du dossier** (à préparer AVANT) :</p>
+<ul>
+<li>Fiches synthétiques sur chaque œuvre</li>
+<li>Citations marquantes</li>
+<li>Bibliographie personnelle</li>
+</ul>
+
+<h3>Structure de l'exposé (environ 10 minutes)</h3>
+
+<p>#### 1. **Introduction** (2 minutes)</p>
+
+<p>**Formule** : « J'ai choisi de vous présenter [objet d'étude] à travers l'étude de [œuvres]. »</p>
+
+<p>**Contenu** :</p>
+<ul>
+<li>Définition de l'objet d'étude (ex: « la critique sociale dans le roman du XIXe siècle »)</li>
+<li>Présentation des œuvres choisies (auteur, titre, date)</li>
+<li>Problématique : question que vous posez</li>
+<li>Annonce du plan</li>
+</ul>
+
+<p>**Exemple** :</p>
+<p>> « J'ai choisi de vous présenter l'objet d'étude *Le roman et le personnage du XVIIe siècle à nos jours* à travers trois œuvres : *La Princesse de Clèves* de Madame de Lafayette (1678), *Le Rouge et le Noir* de Stendhal (1830), et *L'Écume des jours* de Boris Vian (1947). Ma problématique est la suivante : en quoi le personnage romanesque permet-il de critiquer la société de son époque ? »</p>
+
+<p>#### 2. **Développement** (6-7 minutes)</p>
+
+<p>**Deux parties maximum** (2 axes), chacune avec :</p>
+
+<p>**A. Analyse d'une œuvre** (3-4 minutes par œuvre)</p>
+<ul>
+<li>Résumé bref (30 secondes)</li>
+<li>Analyse d'un passage clé (procédés, enjeux)</li>
+<li>Lien avec la problématique</li>
+</ul>
+
+<p>**B. Mise en perspective** (dialogue entre œuvres)</p>
+<ul>
+<li>Points communs / contrastes</li>
+<li>Évolution dans le temps</li>
+<li>Différences de traitement du thème</li>
+</ul>
+
+<p>**Astuce** : Parlez des œuvres au programme ET une œuvre de la culture personnelle.</p>
+
+<p>#### 3. **Conclusion** (1 minute)</p>
+<ul>
+<li>Bilan des réponses à la problématique</li>
+<li>Ouverture (lien avec un autre objet d'étude, une réflexion personnelle)</li>
+</ul>
+
+<p>---</p>
+
+<h2>PARTIE 3 : L'entretien (questions du jury)</h2>
+
+<h3>Types de questions possibles</h3>
+
+<p>**Sur votre exposé** :</p>
+<ul>
+<li>« Pourquoi avoir choisi cette problématique ? »</li>
+<li>« Auriez-vous pu prendre un autre exemple ? »</li>
+<li>« Quelle est l'œuvre qui vous a le plus marqué ? »</li>
+</ul>
+
+<p>**Sur les œuvres au programme** :</p>
+<ul>
+<li>Questions sur l'auteur, le contexte</li>
+<li>Comparaisons entre œuvres</li>
+<li>Lectures complémentaires</li>
+</ul>
+
+<p>**Questions plus générales** :</p>
+<ul>
+<li>Définition d'un mouvement littéraire</li>
+<li>Évolution d'un thème à travers les siècles</li>
+<li>Votre opinion personnelle (argumentée)</li>
+</ul>
+
+<h3>Conseils pour l'entretien</h3>
+<ul>
+<li>**Ne pas rester muet** : même si vous ne savez pas, proposez une hypothèse</li>
+<li>**Relancez** le dialogue : « Cela me fait penser à… »</li>
+<li>**Montrez votre curiosité** : mentionnez des lectures personnelles</li>
+<li>**Restez poli** et courtois, même face à des questions difficiles</li>
+</ul>
+
+<p>---</p>
+
+<h2>CONSEILS GÉNÉRAUX</h2>
+
+<h3>Avant l'épreuve</h3>
+<ul>
+<li>**S'entraîner à l'oral** (timer 10 minutes)</li>
+<li>Préparer des fiches synthétiques</li>
+<li>Relire les œuvres au programme en entier</li>
+<li>Apprendre des citations clés (auteur, œuvre, page si possible)</li>
+</ul>
+
+<h3>Pendant l'épreuve</h3>
+<ul>
+<li>**Parlez distinctement** et à volume normal</li>
+<li>**Regardez le jury** (pas vos notes en permanence)</li>
+<li>**Gérez votre temps** : 10 minutes = max 1200 mots à l'oral</li>
+<li>**Soyez naturel** : évitez l'apprentissage par cœur</li>
+</ul>
+
+<h3>Sur la forme</h3>
+<ul>
+<li>« Bonjour, Madame, Monsieur » / « Au revoir »</li>
+<li>Pas de tics de langage (« euh… »)</li>
+<li>Posture droite, mains visibles</li>
+<li>Langage soutenu mais pas guindé</li>
+</ul>
+
+<h3>Sur le fond</h3>
+<ul>
+<li>**Ne faites pas de résumé** : l'analyse prime</li>
+<li>**Citez des passages** (même approximativement)</li>
+<li>** argumentez** : « cela montre que… », « on peut interpréter »</li>
+<li>**Ne contester pas le jury** : défendez vos idées avec respect</li>
+</ul>
+
+<p>---</p>
+
+<h2>PIÈGES À ÉVITER</h2>
+
+<p>❌ **Résumer l'œuvre entière** → Analysez UN passage seulement</p>
+<p>❌ **Énumérer les figures de style** sans les expliquer</p>
+<p>❌ **Parler de vos souvenirs de lecture** sans rapport avec le texte</p>
+<p>❌ **Se plaindre de la difficulté** du texte</p>
+<p>❌ **Interrompre le jury** pendant ses questions</p>
+<p>❌ **Lire ses notes pendant toute l'épreuve**</p>
+
+<p>---</p>
+
+<h2>CHECKLIST DE RÉVISION</h2>
+
+<ul>
+<li>[ ] Connaître les 15 textes obligatoires (auteur, œuvre, siècle, genre)</li>
+<li>[ ] Savoir faire une introduction en 2 minutes chrono</li>
+<li>[ ] Maîtriser le vocabulaire littéraire (champ lexical, registre, figure de style)</li>
+<li>[ ] Avoir 3 citations par œuvre au moins</li>
+<li>[ ] Être capable de situer chaque œuvre dans son mouvement littéraire</li>
+<li>[ ] Savoir comparer deux œuvres sur un thème</li>
+<li>[ ] Avoir préparé un dossier avec fiches synthétiques</li>
+<li>[ ] S'être entraîné à l'oral chronométré</li>
+<li>[ ] Avoir relu les consignes officielles de l'épreuve</li>
+</ul>
+
+<p>---</p>
+
+<h2>RESSOURCES COMPLÉMENTAIRES</h2>
+
+<h3>Sites utiles</h3>
+<ul>
+<li>**Eduscol** : programmes et ressources officielles</li>
+<li>**Weblettres** : analyses détaillées</li>
+<li>**Bac Français** : annales et sujets</li>
+<li>**Kartable** : résumés et quiz</li>
+</ul>
+
+<h3>Dictionnaires</h3>
+<ul>
+<li>*Le Petit Robert* (définitions, étymologie)</li>
+<li>*Dictionnaire des œuvres* (Lafont, Robert)</li>
+</ul>
+
+<h3>Revues</h3>
+<ul>
+<li>*L'école des parents* (articles sur la littérature)</li>
+<li>*Le Monde diplomatique* (approches critiques)</li>
+</ul>
+
+<p>---</p>
+
+<h2>EXEMPLE D'INTRODUCTION TYPE</h2>
+
+<p>> « Bonjour, je vais vous présenter une explication de texte de **Victor Hugo**, extrait des **Misérables**, **1862**. Ce passage se situe dans la partie où Jean Valjean découvre la misère des enfants des rues. Il s'agit d'un **texte descriptif et pathétique**. Ma problématique est la suivante : **en quoi ce portrait d'enfant misérable fonctionne-t-il comme un appel à la compassion et à l'action sociale ?** Pour répondre, je analyserai d'abord **la construction d'un pathétique réaliste**, puis **l'engagement humaniste de Hugo** qui transparaît dans ce texte. »</p>
+
+<p>---</p>
+
+<p>**Bonne révision !** 🎓📚</p>
+
+            </div>
+        </section>
+
+        <!-- TEXTES SECTION -->
+        <section id="textes">
+            <h2 class="section-title">📖 Analyses des 15 Textes à Connaître</h2>
+            
+    <section id="texte-1" class="texte-card">
+        <div class="texte-header">
+            <span class="texte-number">1</span>
+            <div>
+                <h2>Le Menteur <small>(Pierre Corneille, 1643)</small></h2>
+                <div class="texte-meta">
+                    <span class="tag">Baroque / Classique</span>
+                    <span class="tag">Comédie</span>
+                </div>
+            </div>
+        </div>
+        <div class="texte-content">
+            <p><strong>Contexte :</strong> Pièce de théâtre classique du XVIIe siècle. Corneille y explore le thème du mensonge à travers Dorante, un jeune homme qui ment systématiquement. C'est une comédie de mœurs.</p>
+<p><strong>Résumé :</strong> Dorante, de retour à Paris après quatre ans, ment sur ses origines. Ses mensonges créent des quiproquos. La vérité éclate à la fin et il est pardonné.</p>
+<h3>🔍 Analyse détaillée</h3>
+<p>**Mouvement** : dialogue vif, répliques courtes. Antithèses vérité/mensonge. Ironie dramatique. Registre comique par calembours et quiproquos. Dorante, antihéros baroque. Remise en cause des conventions.</p>
+<h3>📚 Citations importantes</h3>
+<ul>
+<li class="citation">« Je suis né pour mentir, et je mens toute heure »</li>
+<li class="citation">« La vérité doit être sévère, mais le mensonge est amusant »</li>
+<li class="citation">« Je suis un homme fort simple, et qui ne sait ce qu'il dit »</li>
+</ul>
+<h3>💬 Points pour l'entretien</h3>
+<ul>
+<li>Le personnage de Dorante : figure baroque ?</li>
+<li>Comparaison avec *Le Misanthrope* de Molière</li>
+<li>Le comique de situation vs comique de langage</li>
+</ul>
+        </div>
+    </section>
+
+    <section id="texte-2" class="texte-card">
+        <div class="texte-header">
+            <span class="texte-number">2</span>
+            <div>
+                <h2>La Prose du Transsibérien <small>(Blaise Cendrars, 1913)</small></h2>
+                <div class="texte-meta">
+                    <span class="tag">Modernisme / Premier XXe siècle</span>
+                    <span class="tag">Poème en prose</span>
+                </div>
+            </div>
+        </div>
+        <div class="texte-content">
+            <p><strong>Contexte :</strong> Poème du recueil *Les Pâques à New York*, Cendrars mêle voyage en train et vision cosmique. Manifeste de modernité poétique.</p>
+<p><strong>Résumé :</strong> Voyage en transsibérien de Moscou à la Sibérie. Paysages défilants, fièvre, rencontre d'envahisseurs venus d'ailleurs.</p>
+<h3>🔍 Analyse détaillée</h3>
+<p>Forme innovante : phrases longues, anacoluthes, peu de ponctuation. Champs lexicaux : vitesse, froid, étrangeté. Mélange réalisme/fantastique. Rythme haletant qui épouse la vitesse.</p>
+<h3>📚 Citations importantes</h3>
+<ul>
+<li class="citation">« Dans le Transsibérien... on rencontre des paysagistes qui peignent le givre des vitres »</li>
+<li class="citation">« J'ai vu... une nuit noire »</li>
+<li class="citation">« Le train a sauté... »</li>
+</ul>
+<h3>💬 Points pour l'entretien</h3>
+<ul>
+<li>Cendrars et le modernisme</li>
+<li>Comparaison avec Apollinaire (*Zone*)</li>
+<li>Le voyage comme source poétique</li>
+</ul>
+        </div>
+    </section>
+
+    <section id="texte-3" class="texte-card">
+        <div class="texte-header">
+            <span class="texte-number">3</span>
+            <div>
+                <h2>Sido <small>(Colette, 1910)</small></h2>
+                <div class="texte-meta">
+                    <span class="tag">Naturalisme / Belle Époque</span>
+                    <span class="tag">Nouvelles autobiographiques</span>
+                </div>
+            </div>
+        </div>
+        <div class="texte-content">
+            <p><strong>Contexte :</strong> Portrait de la mère de Colette et de l'enfance bourguignonne. 6 nouvelles préparant les *Claudine*.</p>
+<p><strong>Résumé :</strong> La maison, le jardin, les animaux, la relation fusionnelle Sido-Colette. Chaque nouvelle évoque un aspect de la vie provinciale et l'éveil des sens.</p>
+<h3>🔍 Analyse détaillée</h3>
+<p>Thèmes : nature comme liberté, transmission maternelle, temps, sensualité. Style sensoriel, phrases courtes, vocabulaire concret. Absence de misérabilisme.</p>
+<h3>📚 Citations importantes</h3>
+<ul>
+<li class="citation">« Ma maison, c'était le monde »</li>
+<li class="citation">« Le jardin était ma maison »</li>
+<li class="citation">« On n'ennuie jamais une bête »</li>
+</ul>
+<h3>💬 Points pour l'entretien</h3>
+<ul>
+<li>Colette autrice de l'intime</li>
+<li>La nature chez Colette vs Zola</li>
+<li>Figure maternelle dans la littérature</li>
+</ul>
+        </div>
+    </section>
+
+    <section id="texte-4" class="texte-card">
+        <div class="texte-header">
+            <span class="texte-number">4</span>
+            <div>
+                <h2>Les Vrilles de la vigne <small>(Colette, 1908)</small></h2>
+                <div class="texte-meta">
+                    <span class="tag">Naturalisme tardif / Belle Époque</span>
+                    <span class="tag">Recueil de nouvelles</span>
+                </div>
+            </div>
+        </div>
+        <div class="texte-content">
+            <p><strong>Contexte :</strong> Ve tome des *Claudine*, tournant dans l'œuvre : mariage avec Willy, attachement à la Provence.</p>
+<p><strong>Résumé :</strong> Claudine, mère, à Rozven. Vie provinciale, saisons, drames conjugaux, quête de liberté féminine.</p>
+<h3>🔍 Analyse détaillée</h3>
+<p>Axes : vrilles comme métaphore de la vie, rejet des conventions, sensualité, liberté féminine. Métaphores filées (vigne). Opposition ville/campagne. Registre lyrique dans descriptions nature. Style vivant et parlé.</p>
+<h3>📚 Citations importantes</h3>
+<ul>
+<li class="citation">« Les vrilles de la vigne s'accrochent... »</li>
+<li class="citation">« J'ai épousé un homme, je ne me doutais pas que j'épousais tout un décor »</li>
+<li class="citation">« Le soleil, ici, n'est pas le même »</li>
+</ul>
+<h3>💬 Points pour l'entretien</h3>
+<ul>
+<li>Condition féminine</li>
+<li>Naturalisme revisité</li>
+<li>Comparaison avec *Sido*</li>
+</ul>
+        </div>
+    </section>
+
+    <section id="texte-5" class="texte-card">
+        <div class="texte-header">
+            <span class="texte-number">5</span>
+            <div>
+                <h2>Lettres d'une Péruvienne <small>(Françoise de Graffigny, 1747)</small></h2>
+                <div class="texte-meta">
+                    <span class="tag">XVIIIe siècle / Lumières</span>
+                    <span class="tag">Roman épistolaire</span>
+                </div>
+            </div>
+        </div>
+        <div class="texte-content">
+            <p><strong>Contexte :</strong> Chef-d'œuvre du roman épistolaire des Lumières. Zilia, princesse inca, écrite à son fiancé après capture par Espagnols et emmenement en France.</p>
+<p><strong>Résumé :</strong> Zilia découvre la société française avec un regard extérieur. Observe mœurs, absolutisme, condition féminine. Tombe amoureuse d'Aza puis retourne au Pérou, libre.</p>
+<h3>🔍 Analyse détaillée</h3>
+<p>Double regard: naïveté de Zilia critique l'Europe, et regard critique du lecteur français. Thèmes : colonisation, condition féminine, despotisme. Zilia incarne vertu et liberté. Registre sentimental et lyrique.</p>
+<h3>📚 Citations importantes</h3>
+<ul>
+<li class="citation">« Je ne suis plus qu'une ombre errante »</li>
+<li class="citation">« Que l'Europe est vide et le Pérou plein de vie ! »</li>
+<li class="citation">« Je suis née libre, et je veux mourir libre »</li>
+</ul>
+<h3>💬 Points pour l'entretien</h3>
+<ul>
+<li>Roman épistolaire au XVIIIe</li>
+<li>Figure des Lumières</li>
+<li>Comparaison avec *La Nouvelle Héloïse*</li>
+</ul>
+        </div>
+    </section>
+
+    <section id="texte-6" class="texte-card">
+        <div class="texte-header">
+            <span class="texte-number">6</span>
+            <div>
+                <h2>La Princesse de Clèves <small>(Madame de Lafayette, 1678)</small></h2>
+                <div class="texte-meta">
+                    <span class="tag">Classicisme / Préclassique</span>
+                    <span class="tag">Roman psychologique</span>
+                </div>
+            </div>
+        </div>
+        <div class="texte-content">
+            <p><strong>Contexte :</strong> Premier grand roman français, inaugurant le roman d'analyse. S'inscrit dans le mouvement précieux mais dépasse le roman d'aventures.</p>
+<p><strong>Résumé :</strong> Mademoiselle de Chartres épouse le prince de Clèves sans l'aimer. Rencontre le duc de Nemours et en tombe amoureuse. Son mari découvre le secret, meurt, elle se retire dans un couvent.</p>
+<h3>🔍 Analyse détaillée</h3>
+<p>Psychologie : conflit intérieur passion/devoir. Style indirect libre, monologue intérieur. Ironie tragique (le mari meurt de son amour). Thèmes : devoir, honneur, apparences.</p>
+<h3>📚 Citations importantes</h3>
+<ul>
+<li class="citation">« Je suis en danger de perdre ma réputation... »</li>
+<li class="citation">« Je vous ai aimé avec une passion extrême »</li>
+<li class="citation">« Il faut que je vous avoue une vérité... »</li>
+</ul>
+<h3>💬 Points pour l'entretien</h3>
+<ul>
+<li>Place des femmes dans le roman classique</li>
+<li>Roman d'analyse vs aventure</li>
+<li>Comparaison avec *La Nouvelle Héloïse*</li>
+</ul>
+        </div>
+    </section>
+
+    <section id="texte-7" class="texte-card">
+        <div class="texte-header">
+            <span class="texte-number">7</span>
+            <div>
+                <h2>Candide <small>(Voltaire, 1759)</small></h2>
+                <div class="texte-meta">
+                    <span class="tag">Lumières / Philosophie des Lumières</span>
+                    <span class="tag">Conte philosophique</span>
+                </div>
+            </div>
+        </div>
+        <div class="texte-content">
+            <p><strong>Contexte :</strong> Manifeste contre l'optimisme leibnizien. Critique la société (guerre, religion, colonialisme) via les aventures du naïf Candide.</p>
+<p><strong>Résumé :</strong> Candide, élevé dans le meilleur des mondes, parcourt le monde après bannissement. Vit catastrophes, tremblements de terre, inquisition. Retrouve Cunégonde et cultive son jardin : « il faut cultiver notre jardin ».</p>
+<h3>🔍 Analyse détaillée</h3>
+<p>Structure de conte moral, personnages types (Pangloss optimiste, Martin pessimiste). Procédés satiriques : antiphrase, exagération, ironie. Philosophie : rejet de l'optimisme, défense du travail.</p>
+<h3>📚 Citations importantes</h3>
+<ul>
+<li class="citation">« Tout est au mieux dans le meilleur des mondes possibles »</li>
+<li class="citation">« Il faut cultiver notre jardin »</li>
+<li class="citation">« Nous allons cultiver notre jardin »</li>
+</ul>
+<h3>💬 Points pour l'entretien</h3>
+<ul>
+<li>Voltaire et la satire</li>
+<li>Le conte philosophique comme genre</li>
+<li>Candide aujourd'hui</li>
+</ul>
+        </div>
+    </section>
+
+    <section id="texte-8" class="texte-card">
+        <div class="texte-header">
+            <span class="texte-number">8</span>
+            <div>
+                <h2>Le Rouge et le Noir <small>(Stendhal, 1830)</small></h2>
+                <div class="texte-meta">
+                    <span class="tag">Romantisme / XIXe siècle</span>
+                    <span class="tag"> Roman psychologique et social</span>
+                </div>
+            </div>
+        </div>
+        <div class="texte-content">
+            <p><strong>Contexte :</strong> Sous-titré *Chronique du XIXe siècle*. Portrait de Julien Sorel, ambitieux qui monte puis chute. Roman de passion et de société (Restauration).</p>
+<p><strong>Résumé :</strong> Fils de menuisier, entre au séminaire puis devient secrétaire de M. de Rênal dont il séduit la femme. Part pour Paris, séduit Mathilde de La Mole. Passe à l'acte (tente de tuer Mme de Rênal), condamné à mort.</p>
+<h3>🔍 Analyse détaillée</h3>
+<p>Psychologie : Julien entre naïveté et calcul, sincérité et hypocrisie. Style indirect libre. Critique sociale : société de la Restauration, ses privilèges et hypocrisie. Tension ancien/nouveau régime.</p>
+<h3>📚 Citations importantes</h3>
+<ul>
+<li class="citation">« Jeune, ambitieux, j'aurais pu être un homme supérieur »</li>
+<li class="citation">« Le charme de la vie, c'est l'espérance »</li>
+</ul>
+<h3>💬 Points pour l'entretien</h3>
+<ul>
+<li>Julien Sorel : héros romantique ou antihéros ?</li>
+<li>Influence du contexte historique</li>
+<li>Comparaison avec *L'Étranger*</li>
+</ul>
+        </div>
+    </section>
+
+    <section id="texte-9" class="texte-card">
+        <div class="texte-header">
+            <span class="texte-number">9</span>
+            <div>
+                <h2>Madame Bovary <small>(Gustave Flaubert, 1857)</small></h2>
+                <div class="texte-meta">
+                    <span class="tag">Réalisme / Naturalisme</span>
+                    <span class="tag">Roman réaliste</span>
+                </div>
+            </div>
+        </div>
+        <div class="texte-content">
+            <p><strong>Contexte :</strong> Chef-d'œuvre du réalisme français, attaqué pour immoralité. Dépeint la vie provinciale et désillusions d'Emma qui rêve d'amour passionné.</p>
+<p><strong>Résumé :</strong> Emma Rouault épouse Charles Bovary, s'ennuie, rêve de luxe, entretient deux liaisons, s'endette. Se suicide avec de l'arsenic.</p>
+<h3>🔍 Analyse détaillée</h3>
+<p>Style flaubertien : style indirect libre, phrases longues travaillées, ironie distanciée, précision des détails concrets. Noms signifiants (Homais, Lheureux). Thèmes : désir, argent, illusion.</p>
+<h3>📚 Citations importantes</h3>
+<ul>
+<li class="citation">« Elle voulait mourir, mais elle voulait vivre »</li>
+<li class="citation">« Et elle se mit à pleurer... »</li>
+<li class="citation">« Ah! vous êtes un homme, vous! »</li>
+</ul>
+<h3>💬 Points pour l'entretien</h3>
+<ul>
+<li>Ironie flaubertienne</li>
+<li>Condition féminine au XIXe</li>
+<li>Réalisme contre romantisme</li>
+</ul>
+        </div>
+    </section>
+
+    <section id="texte-10" class="texte-card">
+        <div class="texte-header">
+            <span class="texte-number">10</span>
+            <div>
+                <h2>L'Assommoir <small>(Émile Zola, 1877)</small></h2>
+                <div class="texte-meta">
+                    <span class="tag">Naturalisme</span>
+                    <span class="tag">Roman naturaliste (VIIe des Rougon-Macquart)</span>
+                </div>
+            </div>
+        </div>
+        <div class="texte-content">
+            <p><strong>Contexte :</strong> Étude scientifique de l'alcoolisme et misère ouvrière dans le Paris du Second Empire.</p>
+<p><strong>Résumé :</strong> Gervaise ouvre une blanchisserie, succès modeste. Alcool, maladie et mauvais choix la précipitent dans la misère. Fin désespérée.</p>
+<h3>🔍 Analyse détaillée</h3>
+<p>Naturalisme : déterminisme héréditaire + milieu. Description quasi-médicale. Champs lexicaux saleté, faim. Symbolisme de l'alcool comme fléau social. Critique de la société.</p>
+<h3>📚 Citations importantes</h3>
+<ul>
+<li class="citation">« Il n'est de plus grand désespoir que de n'être pas aimé »</li>
+<li class="citation">« L'alcool est un assassin »</li>
+<li class="citation">« La vie est dure pour les pauvres »</li>
+</ul>
+<h3>💬 Points pour l'entretien</h3>
+<ul>
+<li>Zola vs Flaubert</li>
+<li>Description comme arme sociale</li>
+<li>Comparaison avec *Germinal*</li>
+</ul>
+        </div>
+    </section>
+
+    <section id="texte-11" class="texte-card">
+        <div class="texte-header">
+            <span class="texte-number">11</span>
+            <div>
+                <h2>Du côté de chez Swann <small>(Marcel Proust, 1913)</small></h2>
+                <div class="texte-meta">
+                    <span class="tag">Modernisme / début XXe siècle</span>
+                    <span class="tag">Roman-mémoire (t1)</span>
+                </div>
+            </div>
+        </div>
+        <div class="texte-content">
+            <p><strong>Contexte :</strong> Premier tome de *À la recherche du temps perdu*. Introduit mémoire involontaire, jalousie, snobisme. Méditation sur le temps.</p>
+<p><strong>Résumé :</strong> Enfance du narrateur à Combray. Madeleine trempée dans le thé déclenche mémoire involontaire. Swann aime Odette. Mondanités.</p>
+<h3>🔍 Analyse détaillée</h3>
+<p>Mémoire sensorielle. Style long, digressif, phrases à l'infini. Analyse psychologique minutieuse. Thèmes : temps, mémoire, jalousie. La madeleine comme réminiscence. Art comme rédemption.</p>
+<h3>📚 Citations importantes</h3>
+<ul>
+<li class="citation">« Avec un café, un peu de thé, je plongeais pour goûter la saveur »</li>
+<li class="citation">« Le temps qu'on a perdu est retrouvé »</li>
+<li class="citation">« La vraie vie, peut-être, est-elle la littérature ? »</li>
+</ul>
+<h3>💬 Points pour l'entretien</h3>
+<ul>
+<li>Proust et révolution du roman</li>
+<li>Mémoire involontaire vs intellectuelle</li>
+<li>Influence de Bergson</li>
+</ul>
+        </div>
+    </section>
+
+    <section id="texte-12" class="texte-card">
+        <div class="texte-header">
+            <span class="texte-number">12</span>
+            <div>
+                <h2>L'Étranger <small>(Albert Camus, 1942)</small></h2>
+                <div class="texte-meta">
+                    <span class="tag">Existentialisme / Absurde</span>
+                    <span class="tag">Roman philosophique</span>
+                </div>
+            </div>
+        </div>
+        <div class="texte-content">
+            <p><strong>Contexte :</strong> Chef-d'œuvre incarnant la philosophie de l'absurde. Écrit pendant la Seconde Guerre mondiale.</p>
+<p><strong>Résumé :</strong> Meursault assiste à l'enterrement de sa mère sans pleurer. Tue un Arabe sur une plage. Au procès, jugé non pour le meurtre mais pour son indifférence. Condamné à mort, accepte.</p>
+<h3>🔍 Analyse détaillée</h3>
+<p>Style : phrases courtes, dépouillées, journalistique. Thèmes : absurde, indifférence du monde, révolte. Symboles : soleil (oppressant), mer (évasion), revolver (hasard). Meursault comme absurde incarné.</p>
+<h3>📚 Citations importantes</h3>
+<ul>
+<li class="citation">« Aujourd'hui, maman est morte. Ou peut-être hier... »</li>
+<li class="citation">« Dans le soleil du matin, j'ai compris que j'avais tué un homme »</li>
+<li class="citation">« Je me suis ouvert à la douce indifférence du monde »</li>
+</ul>
+<h3>💬 Points pour l'entretien</h3>
+<ul>
+<li>Philosophie de l'absurde</li>
+<li>Style détaché vs révolte intérieure</li>
+<li>Comparaison avec *La Peste*</li>
+</ul>
+        </div>
+    </section>
+
+    <section id="texte-13" class="texte-card">
+        <div class="texte-header">
+            <span class="texte-number">13</span>
+            <div>
+                <h2>Les Fleurs du mal <small>(Charles Baudelaire, 1857)</small></h2>
+                <div class="texte-meta">
+                    <span class="tag">Romantisme finissant / Parnasse / Symbolisme</span>
+                    <span class="tag">Recueil poétique</span>
+                </div>
+            </div>
+        </div>
+        <div class="texte-content">
+            <p><strong>Contexte :</strong> Chef-d'œuvre poétique moderne, condamné pour outrage. Explore l'âme, le mal, la beauté, la ville, le spleen. Manifeste du symbolisme.</p>
+<p><strong>Résumé :</strong> 6 parties : Spleen et Idéal, Tableaux parisiens, Le Vin, Les Fleurs du Mal, Révolte, La Mort. Parcours émotionnel du poète : ennui, désir, révolte, rêve de rédemption par l'art.</p>
+<h3>🔍 Analyse détaillée</h3>
+<p>Thèmes : spleen mal, idéalisation femme, révolte, fascination mort/mal. Forme : alexandrins, poèmes en prose. Symboles récurrents (parfum, fleur, chat). Modernité : ville, rejet romantisme, valorisation laideur.</p>
+<h3>📚 Citations importantes</h3>
+<ul>
+<li class="citation">« Je suis comme le roi d'un pays pluvieux »</li>
+<li class="citation">« L'homme n'est qu'un être de hasard »</li>
+<li class="citation">« Il n'est de erreur que de croire qu'on se trompe »</li>
+</ul>
+<h3>💬 Points pour l'entretien</h3>
+<ul>
+<li>Baudelaire et modernité poétique</li>
+<li>Spleen comme sentiment moderne</li>
+<li>Influence sur Verlaine, Mallarmé</li>
+</ul>
+        </div>
+    </section>
+
+    <section id="texte-14" class="texte-card">
+        <div class="texte-header">
+            <span class="texte-number">14</span>
+            <div>
+                <h2>Le Horla <small>(Guy de Maupassant, 1887)</small></h2>
+                <div class="texte-meta">
+                    <span class="tag">Réalisme / Fantastique</span>
+                    <span class="tag">Nouvelle fantastique</span>
+                </div>
+            </div>
+        </div>
+        <div class="texte-content">
+            <p><strong>Contexte :</strong> Nouvelle emblématique du fantastique maupassantien. Allégorie de la folie et angoisse fin-de-siècle. Être invisible provenant d'Amérique hante le narrateur.</p>
+<p><strong>Résumé :</strong> Le narrateur sent une présence étrange, entend des bruits, découvre le Horla, être invisible qui le possède. Il se suicide pour échapper.</p>
+<h3>🔍 Analyse détaillée</h3>
+<p>Ambiguïté fantastique : créature réelle ou hallucination ? Journal intime, montée angoisse. Hypotypose du Horla. Folie comme thème central.</p>
+<h3>📚 Citations importantes</h3>
+<ul>
+<li class="citation">« Je le sens qui me domine, qui m'envahit »</li>
+<li class="citation">« Il est là, il me regarde, il me possède »</li>
+<li class="citation">« J'ai peur d'être fou »</li>
+</ul>
+<h3>💬 Points pour l'entretien</h3>
+<ul>
+<li>Maupassant et la peur psychologique</li>
+<li>Fantastique fin de siècle</li>
+<li>Folie romantique vs réaliste</li>
+</ul>
+        </div>
+    </section>
+
+    <section id="texte-15" class="texte-card">
+        <div class="texte-header">
+            <span class="texte-number">15</span>
+            <div>
+                <h2>L'Écume des jours <small>(Boris Vian, 1947)</small></h2>
+                <div class="texte-meta">
+                    <span class="tag">Surréalisme / Après-guerre</span>
+                    <span class="tag">Roman fantastique et satirique</span>
+                </div>
+            </div>
+        </div>
+        <div class="texte-content">
+            <p><strong>Contexte :</strong> Roman culte mêlant fantaisie poétique, satire sociale et tragédie personnelle. Vian invente un monde où les objets ont une âme.</p>
+<p><strong>Résumé :</strong> Colin épouse Chloé. Chloé malade (un nénuphar dans le poumon). Colin dépense sa fortune pour la soigner. Rejeté par la société, meurt de chagrin. Appartement voisin se dégrade en parallèle.</p>
+<h3>🔍 Analyse détaillée</h3>
+<p>Surréalisme : jeux de mots, néologismes, scenettes absurdes. Symbolisme : maladie = métaphore société, cuisine rétrécit = précarité, phénix = espoir impossible. Critique de la société de consommation et inégalités.</p>
+<h3>📚 Citations importantes</h3>
+<ul>
+<li class="citation">« J'étais un héros, un dieu, un empereur... »</li>
+<li class="citation">« Chloé, je t'aime, je t'aimerai toujours »</li>
+<li class="citation">« C'est la vie qui s'en va et la mort qui vient »</li>
+</ul>
+<h3>💬 Points pour l'entretien</h3>
+<ul>
+<li>Humour noir chez Vian</li>
+<li>Comparaison avec Prévert</li>
+<li>Littérature engagée ou évasion poétique ?</li>
+</ul>
+        </div>
+    </section>
+
+        </section>
+
+        <!-- RESSOURCES SECTION -->
+        <section id="ressources">
+            <h2 class="section-title">📁 Ressources & Fichiers</h2>
+            <p>Fichiers générés dans le dossier <code>~/Bureau/BAC_Francais_Complet/</code> :</p>
+            <ul style="list-style: disc inside; margin-left: 1.5rem;">
+                <li><code>Methodologie/methodologie_complete.md</code> – Méthodologie détaillée</li>
+                <li><code>Textes/Texte_XX_*/analyse.md</code> – Analyses individuelles</li>
+                <li><code>Site_Web/index.html</code> – Ce site (ouvrir dans un navigateur)</li>
+            </ul>
+            <p style="margin-top: 1rem;"><strong>Conseil :</strong> Personnalisez les fiches d'analyse avec vos propres observations et les documents fournis par votre professeur (fiches Pronote).</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Généré le 2026-05-14 pour Alexandre GALKE (1ERE 1, LFVH)</p>
+        <p><em>« Il faut cultiver notre jardin » – Voltaire, <em>Candide</em></em></p>
+    </footer>
+
+    <script>
+        // Smooth scroll highlighting
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(sec => {
+                const top = sec.offsetTop;
+                if (pageYOffset >= top - 150) current = sec.getAttribute('id');
+            });
+            navLinks.forEach(a => {
+                a.classList.toggle('active', a.getAttribute('href') == '#' + current);
+            });
+        });
+
+        // Anchor smooth scroll with offset
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
